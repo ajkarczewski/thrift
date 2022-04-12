@@ -35,7 +35,7 @@ class User(db.Model, UserMixin):
         return f"Username {self.username}"
 
 class ThriftList(db.Model):
-    __tablename__ = 'blog_posts'
+    __tablename__ = 'thrift_lists'
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     title = db.Column(db.String(140), nullable=False)

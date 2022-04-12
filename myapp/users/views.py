@@ -70,8 +70,8 @@ def account():
 
     return render_template('account.html', form=form)
 
-    @users.route('/<username>')
-    def user_posts(username):
+@users.route('/<username>')
+def user_posts(username):
     page = request.args.get('page', 1, type=int)
     user = User.query.filter_by(username=username).first_or_404()
     thrift_lists = ThriftList.query.filter_by(author=user).order_by(ThriftList.date.desc()).paginate(page=page, per_page=5) 
