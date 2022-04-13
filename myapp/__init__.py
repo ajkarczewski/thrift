@@ -53,5 +53,5 @@ app.register_blueprint(error_pages)
 from myapp.users.views import users
 app.register_blueprint(users)
 
-from myapp.thrift_lists.views import thrift_lists
-app.register_blueprint(thrift_lists)
+from myapp.thrift_items.views import thrift_items
+app.register_blueprint(thrift_items)

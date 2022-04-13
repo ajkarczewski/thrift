@@ -3,7 +3,7 @@ from operator import methodcaller
 from flask import render_template, url_for, flash, redirect, request, Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
 from myapp import db
-from myapp.models import User, ThriftList
+from myapp.models import User, ThriftItem
 from myapp.users.forms import RegistrationForm, LoginForm, UpdateUserForm
 
 users = Blueprint('users', __name__) # dont forget to register this in __init__.py 
@@ -71,8 +71,8 @@ def account():
     return render_template('account.html', form=form)
 
 @users.route('/<username>')
-def user_posts(username):
+def user_items(username):
     page = request.args.get('page', 1, type=int)
     user = User.query.filter_by(username=username).first_or_404()
-    thrift_lists = ThriftList.query.filter_by(author=user).order_by(ThriftList.date.desc()).paginate(page=page, per_page=5) 
-    return render_template('user_thrift_lists.html', thrift_lists=thrift_lists, user=user)
+    thrift_items = ThriftItem.query.filter_by(author=user).order_by(ThriftItem.date.desc()).paginate(page=page, per_page=5) 
+    return render_template('user_thrift_items.html', thrift_items=thrift_items, user=user)
