@@ -11,7 +11,9 @@ thrift_items = Blueprint('thrift_items', __name__)
 def create_item():
     form = ThriftItemForm()
     if form.validate_on_submit():
-        thrift_item = ThriftItem(name=form.name.data, item_details=form.item_details.data, user_id=current_user.id)
+        thrift_item = ThriftItem(name=form.name.data, item_details=form.item_details.data,
+        image_file=form.picture_file,
+        user_id=current_user.id)
         db.session.add(thrift_item)
         db.session.commit()
         flash('Thrift Item Created')

@@ -41,6 +41,7 @@ class ThriftItem(db.Model):
     name = db.Column(db.String(140), nullable=False)
     item_details = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    # image_file = db.Column(db.Text, unique=True, nullable=False)
 
 
     def __init__(self, name, item_details, user_id):
