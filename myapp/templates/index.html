@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="jumbotron">
-        <h1>Items</h1>
+        <h1>My List</h1>
     </div>
     <div class="container">
         {% for item in thrift_items.items %}
@@ -12,7 +12,9 @@
                         <a href="{{url_for('users.user_items', username=item.author.username)}}">Written by: {{item.author.username}}</a>
                     </h2>
                     <p>Added on: {{item.date.strftime('%Y - %m - %d')}}</p>
-                    <a class="btn btn-primary" href="{{url_for('thrift_items.thrift_item', thrift_item_id=item.id)}}">See details</a>
+                    <button class="primary">
+                    <a class="link" href="{{url_for('thrift_items.thrift_item', thrift_item_id=item.id)}}">SEE DETAILS ></a>
+                    </button>
                 </div>
             </div>
         {% endfor %}

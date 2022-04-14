@@ -1,5 +1,37 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%;
+}
+
+#root {
+  width: 100vw;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .nav {
   background-color: lightsteelblue;
+  width: 100%;
 }
 
 .nav-link a {
@@ -11,6 +43,40 @@
 
 .nav-link a:hover {
   text-decoration: underline;
+}
+
+h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: ;
+}
+
+.primary {
+  background-color: #d4ff5b;
+  border-color: none;
+  border-style: none;
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.primary:hover {
+  background-color: whitesmoke;
+  border-color: gray;
+  padding: 5px;
+}
+
+.link {
+  color:black;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'BIZ UDMincho', serif;
+  font-weight: bolder;
+}
+
+.link:hover {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'BIZ UDMincho', serif;
 }
 
 body {
