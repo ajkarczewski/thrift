@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
+<div align="center" class="container">
     <div class="card"> 
         <div class="car-boy">
             <div class="jumbotron">
@@ -8,7 +8,9 @@
     {{form.hidden_tag()}}
     {{form.email.label}}{{form.email}}<br>
     {{form.password.label}}{{form.password}}<br>
-    {{form.submit()}}
+    <div class="link">
+    {{form.submit(class="primary")}}
+        </div>
         </form>
             </div>
         </div>

@@ -5,4 +5,4 @@ from wtforms.validators import DataRequired
 class ThriftItemForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     item_details = TextAreaField('ItemDetails', validators=[DataRequired()])
-    submit = SubmitField('Post')
+    submit = SubmitField('POST >')

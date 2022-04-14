@@ -16,7 +16,7 @@ from myapp.models import User
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Log In')
+    submit = SubmitField('LOG IN >')
 
 class RegistrationForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
@@ -24,7 +24,7 @@ class RegistrationForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired(), EqualTo('pass_confirm', message='Passwords must match!')])
     # we make sure password is equal to pass confirm - so 
     pass_confirm = PasswordField('Confirm Password', validators=[DataRequired()])
-    submit = SubmitField('Register')
+    submit = SubmitField('REGISTER >')
     
     #when someone is registering - if the email exists then we want to raise a validation error
     def check_email(self, field):
@@ -40,7 +40,7 @@ class RegistrationForm(FlaskForm):
 class UpdateUserForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()]) 
     username = StringField('Username', validators=[DataRequired()])
-    submit = SubmitField('Update')
+    submit = SubmitField('UPDATE >')
 
     def check_email(self, field):
         if User.query.filter_by(email=field.data).first():

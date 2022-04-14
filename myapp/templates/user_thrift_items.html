@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="jumbotron">
+    <div align="center">
+        <h1>Welcome to the page for {{user.username}}</h1>
+    </div>
+</div>
     <div class="container">
-        <div class="jumbotron">
-            <div align="center">
-                <h1>Welcome to the page for {{user.username}}</h1>
-            </div>
-        </div>
+            <div class="card"> 
+                <div class="car-boy">
      {% for item in thrift_items.items %}
     <h2>
         <a href="{{url_for('thrift_items.thrift_item', thrift_item_id=item.id)}}">{{item.name}}</a>
@@ -37,6 +39,9 @@
             {% endfor %}
         </ul>
     </nav>
+    </div>
+    </div>
+
 
 
 {% endblock %}
