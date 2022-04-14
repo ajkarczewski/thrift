@@ -13,7 +13,7 @@
     Written By: <a href="{{url_for('users.user_items', username=item.author.username)}}">{{item.author.username}}</a>
 
     <p class="text-muted">
-        Published On: {{post.date.strftime("%y-%m-%d")}}
+        Published On: {{item.date.strftime("%y-%m-%d")}}
     </p>
     <br>
     <p>{{item.item_details}}</p>
