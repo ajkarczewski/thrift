@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-   
-<form method="POST">
+<div class="container">
+    <div class="card"> 
+        <div class="car-boy">
+            <div class="jumbotron">
+        <form method="POST">
     {{form.hidden_tag()}}
     {{form.email.label}}{{form.email}}<br>
     {{form.password.label}}{{form.password}}<br>
     {{form.submit()}}
+        </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-</form>
 {% endblock %}
