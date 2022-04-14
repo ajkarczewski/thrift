@@ -7,10 +7,12 @@
   <p>{{item.item_details}}</p>
    {% if item.author == current_user %}
      <div>
-       <a class="btn btn-secondary" href="{{ url_for('thrift_items.update', thrift_item_id=item.id) }}">Update</a>
+       <button class="primary" class="link">
+       <a class="link" href="{{ url_for('thrift_items.update', thrift_item_id=item.id) }}">UPDATE</a>
+       </button>
        <br>
        <form class="link" action="{{ url_for('thrift_items.delete_item', thrift_item_id=item.id) }}" method="POST">
-        <button class="primary" class="link" type="submit" value="Delete">DELETE</button>
+        <button class="delete" class="link" type="submit" value="Delete">DELETE</button>
       </form>
      </div>
    {% endif %}
