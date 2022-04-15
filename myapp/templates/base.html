@@ -28,6 +28,10 @@
 
         {% if current_user.is_authenticated %}
         <li class="nav-link">
+            <a href="{{url_for('users.user_items', username=current_user.username)}}">MY LIST</a> 
+        </li>
+
+        <li class="nav-link">
             <a href="{{url_for('thrift_items.create_item')}}">ADD ITEM</a> 
         </li>
 
@@ -37,6 +41,7 @@
         <li class="nav-link">
             <a href="{{url_for('users.account')}}">ACCOUNT</a>
         </li>
+
         {% else %}
         <li class="nav-link">
             <a href="{{url_for('users.login')}}">LOG IN</a>
