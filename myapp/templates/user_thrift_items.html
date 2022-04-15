@@ -20,6 +20,15 @@
     <br>
     <p>{{item.item_details}}</p>
     <br>
+    <div>
+        <button class="primary" class="link">
+        <a class="link" href="{{ url_for('thrift_items.update', thrift_item_id=item.id) }}">UPDATE ></a>
+        </button>
+        <br>
+        <button class="delete" class="link" type="submit" value="Delete">
+          <a class="link" href="{{ url_for('thrift_items.delete_item', thrift_item_id=item.id) }}">DELETE ></a>
+        </button>
+        </div>
     {% endfor %}
     </div>
 
