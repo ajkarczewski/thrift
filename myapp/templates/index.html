@@ -10,11 +10,12 @@
         {% for item in thrift_items.items %}
             <div class="card">
                 <div class="car-boy">
-                    <h2>
-                        <a class="card-title" href="{{url_for('thrift_items.thrift_item', thrift_item_id=item.id)}}">{{item.name}}</a>
-                        <a href="{{url_for('users.user_items', username=item.author.username)}}">Written by: {{item.author.username}}</a>
-                    </h2>
-                    <p>Added on: {{item.date.strftime('%Y - %m - %d')}}</p>
+                    <h1>
+                        <!-- <a class="card-title" href="{{url_for('thrift_items.thrift_item', thrift_item_id=item.id)}}">{{item.name}}</a> -->
+                        <a class="card-title" href="{{url_for('users.user_items', username=item.author.username)}}">{{item.author.username}}</a> is looking for: {{item.name.lower()}}
+                    </h1>
+                    <h2>added on: {{item.date.strftime('%B %d, %Y')}}</h2>
+                    <br>
                     <button class="primary">
                     <a class="link" href="{{url_for('thrift_items.thrift_item', thrift_item_id=item.id)}}">SEE DETAILS ></a>
                     </button>

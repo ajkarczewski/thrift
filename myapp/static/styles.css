@@ -60,6 +60,10 @@ body {
   text-decoration: underline;
 }
 
+p {
+ font-size:x-large;
+}
+
 h1 {
   font-family: 'Archivo Black', sans-serif;
 }

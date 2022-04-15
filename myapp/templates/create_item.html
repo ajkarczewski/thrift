@@ -7,14 +7,14 @@
       <form class="form-group" method="POST">
           {{form.hidden_tag()}}
 
-          <div class="form-group">
+          <h2 class="form-group">
               {{form.name.label(class="form-control-label")}}
               {{form.name(class="form-control form-control-lg")}}
-          </div>
-          <div class="form-group">
+          </h2>
+          <h2 class="form-group">
             {{form.item_details.label(class="form-control-label")}}
             {{form.item_details(class="form-control form-control-lg")}}
-        </div>
+          </h2>
         <div class="link" class="form-group">
             {{form.submit(class="primary")}}
         </div>

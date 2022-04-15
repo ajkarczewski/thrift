@@ -2,30 +2,36 @@
 {% block content %}
 <div class="jumbotron">
   <div align="center">
-    <h1>{{ item.name }}</h1>
+    <h1>{{ item.name.upper() }}</h1>
   </div>
 </div>
-  <div class="container">
-    <div class="card"> 
-        <div class="car-boy">
-  <h2>Added by: {{item.author.username}}</h2>
-  <h3>Published: {{ item.date.strftime('%B %d, %Y') }}</h3>
-  <p>{{item.item_details}}</p>
-   {% if item.author == current_user %}
-     <div>
-       <button class="primary" class="link">
-       <a class="link" href="{{ url_for('thrift_items.update', thrift_item_id=item.id) }}">UPDATE ></a>
-       </button>
-       <br>
-       <button class="delete" class="link" type="submit" value="Delete">
-         <a class="link" href="{{ url_for('thrift_items.delete_item', thrift_item_id=item.id) }}">DELETE ></a>
-       </button>
-       <!-- <form class="link" action="{{ url_for('thrift_items.delete_item', thrift_item_id=item.id) }}" method="POST">
+<div class="container">
+  <div class="card">
+    <div class="car-boy">
+      <h1>
+        <a class="card-title"
+          href="{{url_for('users.user_items', username=item.author.username)}}">{{item.author.username}}</a> is looking
+        for: {{item.name.lower()}}
+      </h1>
+      <h2>added on: {{ item.date.strftime('%B %d, %Y') }}</h2>
+      <br>
+      <p>{{item.item_details}}</p>
+      <br>
+      {% if item.author == current_user %}
+      <div>
+        <button class="primary" class="link">
+          <a class="link" href="{{ url_for('thrift_items.update', thrift_item_id=item.id) }}">UPDATE ></a>
+        </button>
+        <br>
+        <button class="delete" class="link" type="submit" value="Delete">
+          <a class="link" href="{{ url_for('thrift_items.delete_item', thrift_item_id=item.id) }}">DELETE ></a>
+        </button>
+        <!-- <form class="link" action="{{ url_for('thrift_items.delete_item', thrift_item_id=item.id) }}" method="POST">
         <button class="delete" class="link" type="submit" value="Delete">DELETE ></button>
       </form> -->
-     </div>
-   {% endif %}
-</div>
-</div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
 </div>
 {% endblock content %}

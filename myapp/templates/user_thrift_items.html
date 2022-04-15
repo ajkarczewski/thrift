@@ -10,18 +10,22 @@
     {% for item in thrift_items.items %}
     <div class="card">
         <div class="car-boy">
-            <h2>
-                <a href="{{url_for('thrift_items.thrift_item', thrift_item_id=item.id)}}">{{item.name}}</a>
-            </h2>
-            Written By: <a
-                href="{{url_for('users.user_items', username=item.author.username)}}">{{item.author.username}}</a>
+            <!-- <h1>
+                {{item.name.lower()}}
+                <a href="{{url_for('thrift_items.thrift_item', thrift_item_id=item.id)}}">{{item.name}}</a> -->
 
-            <p class="text-muted">
-                Published On: {{item.date.strftime("%y-%m-%d")}}
-            </p>
+            <h1>
+                {{item.author.username}} is looking for: {{item.name.lower()}}
+            </h1>
+
+            <h2>
+                added on: {{item.date.strftime("%B %d, %Y")}}
+            </h2>
             <br>
             <p>{{item.item_details}}</p>
             <br>
+
+            {% if item.author == current_user %}
             <div>
                 <button class="primary" class="link">
                     <a class="link" href="{{ url_for('thrift_items.update', thrift_item_id=item.id) }}">UPDATE ></a>
@@ -32,6 +36,7 @@
                         ></a>
                 </button>
             </div>
+            {% endif %}
         </div>
     </div>
     {% endfor %}

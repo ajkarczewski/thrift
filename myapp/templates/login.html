@@ -6,8 +6,10 @@
             <div class="jumbotron">
         <form method="POST">
     {{form.hidden_tag()}}
-    {{form.email.label}}{{form.email}}<br>
-    {{form.password.label}}{{form.password}}<br>
+    <h1>{{form.email.label}} {{form.email}}</h1>
+    <br>
+    <h1>{{form.password.label}} {{form.password}}</h1>
+    <br>
     <div class="link">
     {{form.submit(class="primary")}}
         </div>

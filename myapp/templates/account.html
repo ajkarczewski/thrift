@@ -3,7 +3,7 @@
 
 <div class="jumbotron">
     <div align="center">
-        <h1>Welcome to the page for {{current_user.username}}</h1>
+        <h1>{{current_user.username.upper()}}'S DETAILS</h1>
     </div>
 </div>
 
@@ -14,14 +14,14 @@
                 <div class="form-group">
                     {{form.hidden_tag()}}
                 </div>
-                <div class="form-group">
+                <h2 class="form-group">
                     {{form.username.label(class='form-group')}}
                     {{form.username(class='form-control')}}
-                </div>
-                <div class="form-group">
+                </h2>
+                <h2 class="form-group">
                     {{form.email.label(class='form-group')}}
                     {{form.email(class='form-control')}}
-                </div>
+                </h2>
 
                 <div class="link" class="form-group">
                     {{form.submit(class="primary")}}
