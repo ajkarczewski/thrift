@@ -15,9 +15,8 @@ Flask | Git | Heroku | Python | PostgreSQL | Bootstrap | CSS3 | HTML5
 
 ## Icebox Items 🧊 
 
+- Update site to be fully ADA compliant and accessible
 - Use an email verification API
 - Allow users to comment on community posts
-- Allow image uploads so users can add inspo photos and share finds to the main page
-- Turn autocomplete off
-- Add categories for thrift items
+- Allow image uploads so users can add inspo photos and share finds with community
 - Add custom error pages
