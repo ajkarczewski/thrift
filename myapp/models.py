@@ -6,7 +6,6 @@ from flask_login import UserMixin
 from datetime import datetime
 
 #login management 
-# allows us to use this in templates for isUser stuff 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
